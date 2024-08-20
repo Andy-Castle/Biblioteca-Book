@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Biblioteca/Book</title>
+  </head>
+  <body>
+    <main>
+      <div class="form-button">
+        <dialog>
+          <button autofocus>Close</button>
+          <form onsubmit="return false">
+            <ul>
+              <li>
+                <label for="title">Title</label>
+                <br />
+                <input type="text" name="title" id="title" />
+              </li>
+              <li>
+                <label for="author">Author</label>
+                <br />
+                <input type="text" name="author" id="author" />
+              </li>
+              <li>
+                <label for="pages">Number of pages</label>
+                <br />
+                <input type="number" name="pages" id="pages" />
+              </li>
+              <li>
+                <label for="image">URL of image</label>
+                <br />
+                <input type="url" name="image" id="image" />
+              </li>
+              <li>
+                <label for="read">Read it?</label>
+                <br />
+                <input type="checkbox" name="read" id="read" value="true" />
+              </li>
+              <button id="add">Add</button>
+            </ul>
+          </form>
+        </dialog>
+        <button>New Book</button>
+      </div>
+      <div class="books" id="books"></div>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
