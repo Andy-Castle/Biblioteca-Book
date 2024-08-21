@@ -129,7 +129,7 @@ function showBooks() {
     <p>Read it? : ${elem.read == true ? "Yes" : "No"}</p>
     <div class="actions-buttons">
     <button class="deleteButton" id="${index}">Delete</button>
-    <button id="changeReadIt">Already Read it</button>
+    <button class="changeReadIt">Already Read it</button>
     </div>
     </div>
     `;
