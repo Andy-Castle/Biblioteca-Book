@@ -64,19 +64,19 @@ function addBookToLibrary() {
   console.log(myLibrary);
 }
 
-function deleteBookSelected() {
-  const deleteButtons = document.querySelectorAll(".deleteButton");
-  // const principalTitle = document.getElementById("id");
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const bookIndex = this.getAttribute("id");
-      console.log(`Eliminado ${bookIndex}`);
-      myLibrary.splice(bookIndex, 1);
-      showBooks();
-      console.log(myLibrary);
-    });
-  });
-}
+// function deleteBookSelected() {
+//   const deleteButtons = document.querySelectorAll(".deleteButton");
+//   // const principalTitle = document.getElementById("id");
+//   deleteButtons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       const bookIndex = this.getAttribute("id");
+//       console.log(`Eliminado ${bookIndex}`);
+//       myLibrary.splice(bookIndex, 1);
+//       showBooks();
+//       console.log(myLibrary);
+//     });
+//   });
+// }
 
 const inversorInteligente = new Book(
   "El inversor inteligente",
@@ -128,7 +128,7 @@ function showBooks() {
     <p>Pages: ${elem.pages}</p>
     <p>Read it? : ${elem.read == true ? "Yes" : "No"}</p>
     <div class="actions-buttons">
-    <button class="deleteButton" id="${elem.title}">Delete</button>
+    <button class="deleteButton" id="${index}">Delete</button>
     <button id="changeReadIt">Already Read it</button>
     </div>
     </div>
@@ -137,5 +137,3 @@ function showBooks() {
 }
 
 showBooks();
-
-deleteBookSelected();
