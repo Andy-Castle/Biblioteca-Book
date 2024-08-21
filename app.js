@@ -44,9 +44,9 @@ class Book {
 
 function addBookToLibrary() {
   if (inputRead.checked) {
-    inputRead.value = true;
+    inputRead.value = 1;
   } else {
-    inputRead.value = false;
+    inputRead.value = 0;
   }
   myLibrary.push(
     new Book(
@@ -57,9 +57,25 @@ function addBookToLibrary() {
       inputRead.value
     )
   );
+
   cleanForm();
+  showBooksContainer.innerHTML = "";
   showBooks();
   console.log(myLibrary);
+}
+
+function deleteBookSelected() {
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+  // const principalTitle = document.getElementById("id");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const bookIndex = this.getAttribute("id");
+      console.log(`Eliminado ${bookIndex}`);
+      myLibrary.splice(bookIndex, 1);
+      showBooks();
+      console.log(myLibrary);
+    });
+  });
 }
 
 const inversorInteligente = new Book(
@@ -67,7 +83,7 @@ const inversorInteligente = new Book(
   "Benjamin Graham",
   624,
   "https://m.media-amazon.com/images/I/71o-fj+FpDL._AC_UF894,1000_QL80_.jpg",
-  false
+  0
 );
 
 const unPasoPorDelanteDeWallstreet = new Book(
@@ -75,7 +91,7 @@ const unPasoPorDelanteDeWallstreet = new Book(
   "Peter Lynch",
   368,
   "https://m.media-amazon.com/images/I/515YbevffDL.jpg",
-  false
+  0
 );
 
 const psicologiaDelDinero = new Book(
@@ -83,7 +99,7 @@ const psicologiaDelDinero = new Book(
   "Morgan Housel",
   312,
   "https://m.media-amazon.com/images/I/71A8FH9qVKL._AC_UF894,1000_QL80_.jpg",
-  false
+  0
 );
 
 const principiosParaElExito = new Book(
@@ -91,7 +107,7 @@ const principiosParaElExito = new Book(
   "Ray Dalio",
   600,
   "https://m.media-amazon.com/images/I/412fPm-MOGL._SY342_.jpg",
-  false
+  0
 );
 
 myLibrary.push(
@@ -102,17 +118,24 @@ myLibrary.push(
 );
 
 function showBooks() {
-  myLibrary.forEach((elem) => {
+  showBooksContainer.innerHTML = "";
+  myLibrary.forEach((elem, index) => {
     showBooksContainer.innerHTML += `
     <div class="individual-book">
-    <h1>${elem.title}</h1>
+    <h1 id="principalTitle">${elem.title}</h1>
     <h4>${elem.author}</h4>
     <img src=${elem.image} alt=${elem.title}/>
     <p>Pages: ${elem.pages}</p>
-    <p>Read it? : ${elem.read ? "Yes" : "No"}</p>
+    <p>Read it? : ${elem.read == true ? "Yes" : "No"}</p>
+    <div class="actions-buttons">
+    <button class="deleteButton" id="${elem.title}">Delete</button>
+    <button id="changeReadIt">Already Read it</button>
+    </div>
     </div>
     `;
   });
 }
 
 showBooks();
+
+deleteBookSelected();
