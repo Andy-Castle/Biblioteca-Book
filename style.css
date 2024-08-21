@@ -6,36 +6,75 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+header {
+  background-color: #73bba3;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #f6fb7a;
+}
+
 .form-button {
   display: flex;
   justify-content: center;
 }
 
+.new-book-button {
+  padding: 12px 25px;
+  border: 3.5px solid #00712d;
+  border-radius: 8px;
+  background-color: #f6fb7a;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.new-book-button:hover {
+  background-color: #949743;
+  color: white;
+  border: 3.5px solid #b4e380;
+}
+
 dialog {
+  width: 275px;
+  
   margin: auto;
 }
 
+dialog[open] {
+  scale: 1;
+  transition: scale 0.3s ease-in-out;
+  @starting-style {
+    scale: 0;
+  }
+}
+
 .books {
-  width: 100vh;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  grid-template-columns: 26% 26% 26%;
   padding: 20px;
-  column-gap: 25px;
-  row-gap: 25px;
+  row-gap: 35px;
+  justify-items: center;
 }
 
 .individual-book {
-  width: 450px;
+  width: 350px;
   height: auto;
-  border: 1px solid black;
+  border: 5px solid #88d66c;
   border-radius: 25px;
   display: grid;
   justify-items: center;
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
+  background-color: #b4e380;
 }
 
 .individual-book h1,
@@ -46,5 +85,5 @@ p {
 
 .individual-book img {
   height: 350px;
-  width: 400px;
+  width: 290px;
 }
