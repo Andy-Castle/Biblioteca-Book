@@ -10,6 +10,8 @@ const inputRead = document.getElementById("read");
 const buttonAdd = document.getElementById("add");
 //show books
 const showBooksContainer = document.getElementById("books");
+// delete books
+// const deleteButtons = document.querySelectorAll(".deleteButton");
 
 showButton.addEventListener("click", () => {
   dialog.showModal();
@@ -50,11 +52,12 @@ function addBookToLibrary() {
   }
   myLibrary.push(
     new Book(
-      inputTitle.value,
-      inputAuthor.value,
-      inputPages.value,
-      inputImage.value,
-      inputRead.value
+      inputTitle.value || "El principito",
+      inputAuthor.value || "Antoine de Saint-Exupéry",
+      inputPages.value || 92,
+      inputImage.value ||
+        "https://m.media-amazon.com/images/I/71AVK5VIAzL._AC_UF894,1000_QL80_.jpg",
+      inputRead.value || 1
     )
   );
 
@@ -64,65 +67,63 @@ function addBookToLibrary() {
   console.log(myLibrary);
 }
 
-// function deleteBookSelected() {
-//   const deleteButtons = document.querySelectorAll(".deleteButton");
-//   // const principalTitle = document.getElementById("id");
-//   deleteButtons.forEach((button) => {
-//     button.addEventListener("click", function () {
-//       const bookIndex = this.getAttribute("id");
-//       console.log(`Eliminado ${bookIndex}`);
-//       myLibrary.splice(bookIndex, 1);
-//       showBooks();
-//       console.log(myLibrary);
-//     });
+// const deleteButtons = document.querySelectorAll(".deleteButton");
+// deleteButtons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     console.log(button);
+//     const bookIndex = this.getAttribute("id");
+//     console.log(`Eliminado ${bookIndex}`);
+//     myLibrary.splice(bookIndex, 1);
+//     showBooks();
+//     console.log(myLibrary);
 //   });
-// }
+// });
 
-const inversorInteligente = new Book(
-  "El inversor inteligente",
-  "Benjamin Graham",
-  624,
-  "https://m.media-amazon.com/images/I/71o-fj+FpDL._AC_UF894,1000_QL80_.jpg",
-  0
-);
+// const inversorInteligente = new Book(
+//   "El inversor inteligente",
+//   "Benjamin Graham",
+//   624,
+//   "https://m.media-amazon.com/images/I/71o-fj+FpDL._AC_UF894,1000_QL80_.jpg",
+//   0
+// );
 
-const unPasoPorDelanteDeWallstreet = new Book(
-  "Un paso por delante de Wall Stree",
-  "Peter Lynch",
-  368,
-  "https://m.media-amazon.com/images/I/515YbevffDL.jpg",
-  0
-);
+// const unPasoPorDelanteDeWallstreet = new Book(
+//   "Un paso por delante de Wall Stree",
+//   "Peter Lynch",
+//   368,
+//   "https://m.media-amazon.com/images/I/515YbevffDL.jpg",
+//   0
+// );
 
-const psicologiaDelDinero = new Book(
-  "La psicología del dinero",
-  "Morgan Housel",
-  312,
-  "https://m.media-amazon.com/images/I/71A8FH9qVKL._AC_UF894,1000_QL80_.jpg",
-  0
-);
+// const psicologiaDelDinero = new Book(
+//   "La psicología del dinero",
+//   "Morgan Housel",
+//   312,
+//   "https://m.media-amazon.com/images/I/71A8FH9qVKL._AC_UF894,1000_QL80_.jpg",
+//   0
+// );
 
-const principiosParaElExito = new Book(
-  "Principios para el éxito",
-  "Ray Dalio",
-  600,
-  "https://m.media-amazon.com/images/I/412fPm-MOGL._SY342_.jpg",
-  0
-);
+// const principiosParaElExito = new Book(
+//   "Principios para el éxito",
+//   "Ray Dalio",
+//   600,
+//   "https://m.media-amazon.com/images/I/412fPm-MOGL._SY342_.jpg",
+//   0
+// );
 
-myLibrary.push(
-  inversorInteligente,
-  unPasoPorDelanteDeWallstreet,
-  psicologiaDelDinero,
-  principiosParaElExito
-);
+// myLibrary.push(
+//   inversorInteligente,
+//   unPasoPorDelanteDeWallstreet,
+//   psicologiaDelDinero,
+//   principiosParaElExito
+// );
 
 function showBooks() {
   showBooksContainer.innerHTML = "";
   myLibrary.forEach((elem, index) => {
     showBooksContainer.innerHTML += `
     <div class="individual-book">
-    <h1 id="principalTitle">${elem.title}</h1>
+    <h1 class="principalTitle">${elem.title}</h1>
     <h4>${elem.author}</h4>
     <img src=${elem.image} alt=${elem.title}/>
     <p>Pages: ${elem.pages}</p>
