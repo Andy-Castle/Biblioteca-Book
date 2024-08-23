@@ -19,6 +19,7 @@ header {
 
 main {
   background-color: #f6fb7a;
+  height: 100vh;
 }
 
 .form-button {
