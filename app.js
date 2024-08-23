@@ -67,18 +67,6 @@ function addBookToLibrary() {
   console.log(myLibrary);
 }
 
-// const deleteButtons = document.querySelectorAll(".deleteButton");
-// deleteButtons.forEach((button) => {
-//   button.addEventListener("click", function () {
-//     console.log(button);
-//     const bookIndex = this.getAttribute("id");
-//     console.log(`Eliminado ${bookIndex}`);
-//     myLibrary.splice(bookIndex, 1);
-//     showBooks();
-//     console.log(myLibrary);
-//   });
-// });
-
 // const inversorInteligente = new Book(
 //   "El inversor inteligente",
 //   "Benjamin Graham",
@@ -135,6 +123,17 @@ function showBooks() {
     </div>
     `;
   });
+
+  deleteBook();
 }
 
-showBooks();
+function deleteBook() {
+  const deleteButtons = document.querySelectorAll(".deleteButton");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const bookId = button.id;
+      myLibrary.splice(bookId, 1);
+      showBooks();
+    });
+  });
+}
