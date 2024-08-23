@@ -10,8 +10,6 @@ const inputRead = document.getElementById("read");
 const buttonAdd = document.getElementById("add");
 //show books
 const showBooksContainer = document.getElementById("books");
-// delete books
-// const deleteButtons = document.querySelectorAll(".deleteButton");
 
 showButton.addEventListener("click", () => {
   dialog.showModal();
