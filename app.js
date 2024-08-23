@@ -65,44 +65,44 @@ function addBookToLibrary() {
   console.log(myLibrary);
 }
 
-// const inversorInteligente = new Book(
-//   "El inversor inteligente",
-//   "Benjamin Graham",
-//   624,
-//   "https://m.media-amazon.com/images/I/71o-fj+FpDL._AC_UF894,1000_QL80_.jpg",
-//   0
-// );
+const inversorInteligente = new Book(
+  "El inversor inteligente",
+  "Benjamin Graham",
+  624,
+  "https://m.media-amazon.com/images/I/71o-fj+FpDL._AC_UF894,1000_QL80_.jpg",
+  0
+);
 
-// const unPasoPorDelanteDeWallstreet = new Book(
-//   "Un paso por delante de Wall Stree",
-//   "Peter Lynch",
-//   368,
-//   "https://m.media-amazon.com/images/I/515YbevffDL.jpg",
-//   0
-// );
+const unPasoPorDelanteDeWallstreet = new Book(
+  "Un paso por delante de Wall Stree",
+  "Peter Lynch",
+  368,
+  "https://m.media-amazon.com/images/I/515YbevffDL.jpg",
+  0
+);
 
-// const psicologiaDelDinero = new Book(
-//   "La psicología del dinero",
-//   "Morgan Housel",
-//   312,
-//   "https://m.media-amazon.com/images/I/71A8FH9qVKL._AC_UF894,1000_QL80_.jpg",
-//   0
-// );
+const psicologiaDelDinero = new Book(
+  "La psicología del dinero",
+  "Morgan Housel",
+  312,
+  "https://m.media-amazon.com/images/I/71A8FH9qVKL._AC_UF894,1000_QL80_.jpg",
+  0
+);
 
-// const principiosParaElExito = new Book(
-//   "Principios para el éxito",
-//   "Ray Dalio",
-//   600,
-//   "https://m.media-amazon.com/images/I/412fPm-MOGL._SY342_.jpg",
-//   0
-// );
+const principiosParaElExito = new Book(
+  "Principios para el éxito",
+  "Ray Dalio",
+  600,
+  "https://m.media-amazon.com/images/I/412fPm-MOGL._SY342_.jpg",
+  0
+);
 
-// myLibrary.push(
-//   inversorInteligente,
-//   unPasoPorDelanteDeWallstreet,
-//   psicologiaDelDinero,
-//   principiosParaElExito
-// );
+myLibrary.push(
+  inversorInteligente,
+  unPasoPorDelanteDeWallstreet,
+  psicologiaDelDinero,
+  principiosParaElExito
+);
 
 function showBooks() {
   showBooksContainer.innerHTML = "";
@@ -135,3 +135,5 @@ function deleteBook() {
     });
   });
 }
+
+showBooks();
