@@ -142,13 +142,18 @@ function editReadIt() {
   changeReadItButton.forEach((button) => {
     button.addEventListener("click", function () {
       const readId = button.id;
-      for (let i = 0; i < myLibrary.length; i++) {
-        myLibrary[readId].read = 1;
-      }
+      iterareBooks(readId);
       showBooks();
-      console.log(myLibrary);
     });
   });
+  console.log(myLibrary);
+}
+
+function iterareBooks(readId) {
+  // for (let i = 0; i < myLibrary.length; i++) {
+  //   myLibrary[readId].read = 1;
+  // }
+  
 }
 
 showBooks();
