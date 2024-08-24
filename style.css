@@ -31,6 +31,10 @@ ul {
   list-style: none;
 }
 
+ul li {
+  margin: 8px 0px;
+}
+
 .new-book-button {
   padding: 12px 25px;
   border: 3.5px solid #00712d;
@@ -50,6 +54,7 @@ ul {
 dialog {
   width: 275px;
   margin: auto;
+  background-color: whitesmoke;
 }
 
 dialog[open] {
@@ -67,6 +72,34 @@ dialog[open] {
   @starting-style {
     scale: 0;
   }
+}
+
+form {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+form input {
+  border-radius: 5px;
+  padding: 2px;
+}
+
+form button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: #88d66c;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+form button:hover {
+  background-color: #5a8c48;
+  color: white;
 }
 
 .button-area {

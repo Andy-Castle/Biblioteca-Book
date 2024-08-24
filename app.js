@@ -150,10 +150,7 @@ function editReadIt() {
 }
 
 function iterareBooks(readId) {
-  // for (let i = 0; i < myLibrary.length; i++) {
-  //   myLibrary[readId].read = 1;
-  // }
-  
+  myLibrary[readId].read = myLibrary[readId].read == 1 ? 0 : 1;
 }
 
 showBooks();
