@@ -152,10 +152,3 @@ function editReadIt() {
 }
 
 showBooks();
-
-// for (let i = 0; i < myLibrary.length; i++) {
-//   console.log(myLibrary[0].author);
-//   myLibrary[1].read = 1;
-// }
-
-// console.log(myLibrary);
