@@ -146,7 +146,6 @@ function editReadIt() {
       showBooks();
     });
   });
-  console.log(myLibrary);
 }
 
 function iterareBooks(readId) {
