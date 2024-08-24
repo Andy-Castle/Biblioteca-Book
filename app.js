@@ -116,13 +116,14 @@ function showBooks() {
     <p>Read it? : ${elem.read == true ? "Yes" : "No"}</p>
     <div class="actions-buttons">
     <button class="deleteButton" id="${index}">Delete</button>
-    <button class="changeReadIt">Already Read it</button>
+    <button class="changeReadIt" id="${index}">Already Read it</button>
     </div>
     </div>
     `;
   });
 
   deleteBook();
+  editReadIt();
 }
 
 function deleteBook() {
@@ -136,4 +137,25 @@ function deleteBook() {
   });
 }
 
+function editReadIt() {
+  const changeReadItButton = document.querySelectorAll(".changeReadIt");
+  changeReadItButton.forEach((button) => {
+    button.addEventListener("click", function () {
+      const readId = button.id;
+      for (let i = 0; i < myLibrary.length; i++) {
+        myLibrary[readId].read = 1;
+      }
+      showBooks();
+      console.log(myLibrary);
+    });
+  });
+}
+
 showBooks();
+
+// for (let i = 0; i < myLibrary.length; i++) {
+//   console.log(myLibrary[0].author);
+//   myLibrary[1].read = 1;
+// }
+
+// console.log(myLibrary);
