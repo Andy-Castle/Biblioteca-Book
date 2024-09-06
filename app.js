@@ -32,6 +32,7 @@ function cleanForm() {
 
 const myLibrary = [];
 
+//Esto ya habia sido cambiado a clases
 class Book {
   constructor(title, author, pages, image, read) {
     this.title = title;
